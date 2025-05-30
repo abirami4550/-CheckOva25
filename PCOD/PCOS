@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PCOS/PCOD Self-Checker - #CheckOva25</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff9f9;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+
+    h1 {
+      color: #d45a8c;
+      text-align: center;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+    }
+
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    button {
+      margin-top: 20px;
+      background-color: #d45a8c;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .tag {
+      color: #aa2b68;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🩺 PCOS/PCOD Self-Check - <span class="tag">#CheckOva25</span></h1>
+
+  <form id="quizForm">
+    <div>
+      <label>1. Do you have irregular periods?</label>
+      <input type="radio" name="q1" value="yes">Yes
+      <input type="radio" name="q1" value="no">No
+    </div>
+
+    <div>
+      <label>2. Do you experience facial or body hair growth?</label>
+      <input type="radio" name="q2" value="yes">Yes
+      <input type="radio" name="q2" value="no">No
+    </div>
+
+    <div>
+      <label>3. Do you struggle with sudden weight gain?</label>
+      <input type="radio" name="q3" value="yes">Yes
+      <input type="radio" name="q3" value="no">No
+    </div>
+
+    <div>
+      <label>4. Do you have acne or oily skin?</label>
+      <input type="radio" name="q4" value="yes">Yes
+      <input type="radio" name="q4" value="no">No
+    </div>
+
+    <div>
+      <label>5. Do you notice scalp hair thinning?</label>
+      <input type="radio" name="q5" value="yes">Yes
+      <input type="radio" name="q5" value="no">No
+    </div>
+
+    <div>
+      <label>6. Do you have dark skin patches (neck, armpits)?</label>
+      <input type="radio" name="q6" value="yes">Yes
+      <input type="radio" name="q6" value="no">No
+    </div>
+
+    <button type="button" onclick="calculateResult()">Check Now</button>
+
+    <div class="result" id="resultBox"></div>
+  </form>
+
+  <script>
+    function calculateResult() {
+      const form = document.forms['quizForm'];
+      let score = 0;
+
+      for (let i = 1; i <= 6; i++) {
+        const answer = form['q' + i].value;
+        if (answer === 'yes') score++;
+      }
+
+      const resultBox = document.getElementById('resultBox');
+
+      if (score >= 3) {
+        resultBox.innerHTML = `⚠️ You may have signs of PCOS/PCOD. Please consult a doctor.<br>
+        Use <strong class="tag">#CheckOva25</strong> online to find support, guidance & resources.`;
+      } else {
+        resultBox.innerHTML = `✅ You may not have major symptoms, but always track your health.<br>
+        Explore more using <strong class="tag">#CheckOva25</strong>.`;
+      }
+    }
+  </script>
+
+</body>
+</html>
+
