@@ -1,0 +1,1 @@
+CheckOva25 is a safe space for young girls and women going through puberty and early adulthood. We believe awareness is power. This platform helps you understand your body, spot signs of PCOD/PCOS early, and take charge of your health. No fear, no shame—just truth, support, and strength.
